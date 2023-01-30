@@ -30,8 +30,34 @@ public class HashTable {
 		}
 	}
 
+	// Remove method
+	public static void remove(String string, String removeWord) {
+		// split words from the sentence to store in String array using split()
+		String[] stringArray = string.split(" ");
+		String newSentenceAfterRemovingWord = " ";
+
+		// Iterating By using for each loop
+		for (String words : stringArray) {
+			// ! exclamation mark is used as not equal to sign
+			if (!words.equals(removeWord)) {
+				// iterate till end and remove "avoidable" from the paragraph
+				newSentenceAfterRemovingWord = newSentenceAfterRemovingWord + words + " ";
+
+			}
+		}
+		// new sentence after removing "avoidable" word.
+		System.out.println(newSentenceAfterRemovingWord);
+	}
+
 	public static void main(String[] args) {
 		userInputSentence("Paranoids are not paranoid because they are paranoid but because "
 				+ "they keep putting themselves deliberately into paranoid avoidable situations");
+
+		System.out.println("=====================================================");
+
+		String string = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+		String removeWord = "avoidable";
+		remove(string, removeWord);
+
 	}
 }
